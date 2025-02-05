@@ -1,0 +1,7 @@
+{
+    "configFileName": "config/xwr68xx_profile_2024_07_16_20_fps.cfg",
+    "visualizer": false,
+    "controlPort": "/dev/ttyUSB0",
+    "dataPort": "/dev/ttyUSB1",
+    "fileName": "log/test_robomaster_5_mmwave_sensor_7_cfar"
+}

@@ -1,0 +1,4 @@
+Run pymmwave in robomaster
+
+source /home/robot_5/py_mmwave_dev/py_mmwave_read/myenv/bin/activate
+python py_mmw_main_robomaster.py

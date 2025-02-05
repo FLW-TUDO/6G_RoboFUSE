@@ -1,0 +1,20 @@
+﻿      The steps to run the debugger to check and verify the d2d communication between two esp32
+      
+      
+    • First initiate the vicon on the robomaster and run the code
+‘ros2_serial.py’ on the multix broker.
+In the code itself. Change the ros2 topic with the topics displayed in the ros2 topic list.
+      
+    • Then on one of the Jetson run the 
+      debugger.py . Make sure to check the UsB connections ‘dev/tty/THS1’
+      which is the default UART pins 8 and 10.
+      
+    • Then run the script on the Arduino IDE sender_debug.ino
+      Change the mac address of the target esp_32
+      (Arduino IDE to be replaced with Arduino CLI later)
+      
+    • On the other esp_32. Run the reciever_debug.ino
+      Change the mac address to the sender ESP
+      
+    • The last code read_serial2.py is responsible to publish the ros2 topic .(The part to calculate the latency is still haven't checked.)
+

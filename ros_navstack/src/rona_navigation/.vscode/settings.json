@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/shernand/RoNa/install/teb_msgs/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/ros_robomaster_description/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/rona_navigation/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/rona_gazebo/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/realsense2_camera_msgs/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/costmap_converter_msgs/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/shernand/RoNa/install/teb_msgs/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/ros_robomaster_description/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/rona_navigation/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/rona_gazebo/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/realsense2_camera_msgs/lib/python3.8/site-packages",
+        "/home/shernand/RoNa/install/costmap_converter_msgs/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ]
+}

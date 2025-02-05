@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/shernand/RoNa/install/teb_local_planner/include/**",
+        "/home/shernand/RoNa/install/teb_msgs/include/**",
+        "/home/shernand/RoNa/install/realsense2_camera/include/**",
+        "/home/shernand/RoNa/install/realsense2_camera_msgs/include/**",
+        "/home/shernand/RoNa/install/depthimage_to_laserscan/include/**",
+        "/home/shernand/RoNa/install/costmap_converter/include/**",
+        "/home/shernand/RoNa/install/costmap_converter_msgs/include/**",
+        "/opt/ros/galactic/include/**",
+        "/home/shernand/RoNa/src/costmap_converter/costmap_converter/include/**",
+        "/home/shernand/RoNa/src/depthimage_to_laserscan/include/**",
+        "/home/shernand/RoNa/src/realsense-ros/realsense2_camera/include/**",
+        "/home/shernand/RoNa/src/rona_gazebo/include/**",
+        "/home/shernand/RoNa/src/rona_navigation/include/**",
+        "/home/shernand/RoNa/src/teb_local_planner/teb_local_planner/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,11 @@
+6G_RoboFUSE run
+
+1. cd 6G_RoboFUSE open 3 different terminal tabs
+2. Set first tab and open Sensing and run source /home/robot_3/ti/dev/python_tool/Python_venv/mmwave_plot/myenv/bin/activate
+3. Set second tab and open ESP32
+4. Set third tab to run the main ISMAC program
+
+RUN Step by Step in following:
+1. Run the python3 serial_data_ismac.py on second tab
+2. Run ISMAC main program python3 time_division_main_controller.py on third tab
+3. Press reset on radar sensor and run python py_mmw_main_robomaster.py on first tab

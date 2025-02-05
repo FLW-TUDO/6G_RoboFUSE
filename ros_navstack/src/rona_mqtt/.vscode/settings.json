@@ -1,0 +1,38 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/emagon/rona/install/teb_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/ros_robomaster_description/lib/python3.10/site-packages",
+        "/home/emagon/rona/install/rona_navigation/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/rona_gazebo/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/costmap_converter_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/ros_robomaster_description/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/rona_mqtt/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/rona_gazebo/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/rona_common/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/rm_nav2/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_performance_measurement_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_isaac_sim/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/nvblox_cpu_gpu_tools/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/emagon/rona/install/teb_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/ros_robomaster_description/lib/python3.10/site-packages",
+        "/home/emagon/rona/install/rona_navigation/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/rona_gazebo/local/lib/python3.10/dist-packages",
+        "/home/emagon/rona/install/costmap_converter_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/ros_robomaster_description/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/rona_mqtt/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/rona_gazebo/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/rona_common/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/rm_nav2/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_performance_measurement_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_msgs/local/lib/python3.10/dist-packages",
+        "/home/emagon/Nav_WS/install/nvblox_isaac_sim/lib/python3.10/site-packages",
+        "/home/emagon/Nav_WS/install/nvblox_cpu_gpu_tools/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
