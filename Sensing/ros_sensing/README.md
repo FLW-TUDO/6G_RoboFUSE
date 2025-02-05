@@ -1,6 +1,10 @@
-Usage Instructions
+## Introduction
 
-Prerequisites
+The ros_sensing script is adapted and modified from this repository https://github.com/kimsooyoung/mmwave_ti_ros/tree/master. Right now it works under ROS2 Humble.
+
+## Usage Instructions
+
+## Prerequisites
 
 Ensure you have installed:
 
@@ -8,34 +12,34 @@ Ensure you have installed:
 
 Install required Linux packages:
 
-sudo apt-get install libpthread-stubs0-dev
-sudo apt install ros-humble-perception-pcl -y
-sudo apt install ros-humble-composition -y
+    sudo apt-get install libpthread-stubs0-dev
+    sudo apt install ros-humble-perception-pcl -y
+    sudo apt install ros-humble-composition -y
 
 Clone/Download this repo
 
-cd ~/ros2_ws/src/
-git clone <repository_url>
+    cd ~/ros2_ws/src/
+    git clone <repository_url>
 
 Build the package using colcon:
 
-cd ~/ros2_ws/
+    cd ~/ros2_ws/
 
-# Build serial interface package
-colcon build --symlink-install --packages-select serial
-source install/local_setup.bash
+### Build serial interface package
+    colcon build --symlink-install --packages-select serial
+    source install/local_setup.bash
 
-# Build message interfaces package
-colcon build --symlink-install --packages-select ti_mmwave_ros2_interfaces
-source install/local_setup.bash
+### Build message interfaces package
+    colcon build --symlink-install --packages-select ti_mmwave_ros2_interfaces
+    source install/local_setup.bash
 
-# Build main radar processing package (including socket communication)
-colcon build --symlink-install --packages-select ti_mmwave_ros2_pkg
-source install/local_setup.bash
+### Build main radar processing package (including socket communication)
+    colcon build --symlink-install --packages-select ti_mmwave_ros2_pkg
+    source install/local_setup.bash
 
-# Optional: Build example visualizations or additional tools
-colcon build --symlink-install --packages-select ti_mmwave_ros2_examples
-source install/local_setup.bash
+### Optional: Build example visualizations or additional tools
+    colcon build --symlink-install --packages-select ti_mmwave_ros2_examples
+    source install/local_setup.bash
 
 Launching
 (To Use with Robofuse lauch the serial and time division code in sperate terminals before this launch command)

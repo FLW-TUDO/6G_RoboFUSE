@@ -1,5 +1,7 @@
 # TI mmWave ROS 2 Package (Customized)
 
+Readme from https://github.com/kimsooyoung/mmwave_ti_ros/tree/master 
+
 > Radar can overcome some cases that other sensors cannot. Such as transparent, metalic objects, dark and rainy area. TI's mmWave is cheap, stable, and powerful sensor for radar sensing. And this package is made for ROS 2 compatibility for that.
 
 <p align="center">
