@@ -59,7 +59,14 @@ void mmWaveDataHdl::onInit() {
   int myMaxAllowedElevationAngleDeg;
   int myMaxAllowedAzimuthAngleDeg;
 
+  //ns = this->declare_parameter("namespace", "ep03");
+
   ns = this->declare_parameter("namespace", "");
+    // if (!ns.empty()) {
+    //     this->set_namespace(ns);
+    // }
+    
+
 
   mySerialPort = this->declare_parameter("data_port", "/dev/ttyUSB1");
   myBaudRate = this->declare_parameter("data_rate", 921600);
@@ -89,13 +96,21 @@ void mmWaveDataHdl::onInit() {
 
   if (ns.compare("") != 0)
     ns = "/" + ns;
-
+  
+  RCLCPP_INFO(this->get_logger(), "Namespace: %s", this->get_namespace());
   auto DataUARTHandler_pub =
-      create_publisher<PointCloud2>(ns + "/ti_mmwave/radar_scan_pcl", 100);
+      create_publisher<PointCloud2>("/ep03/ti_mmwave/radar_scan_pcl", 100);
   auto radar_scan_pub =
-      create_publisher<RadarScan>(ns + "/ti_mmwave/radar_scan", 100);
+      create_publisher<RadarScan>("/ep03/ti_mmwave/radar_scan", 100);
   auto marker_pub =
-      create_publisher<Marker>(ns + "/ti_mmwave/radar_scan_markers", 100);
+      create_publisher<Marker>("/ep03/ti_mmwave/radar_scan_markers", 100);
+
+//   auto DataUARTHandler_pub =
+//       create_publisher<PointCloud2>(ns + "/ti_mmwave/radar_scan_pcl", 100);
+//   auto radar_scan_pub =
+//       create_publisher<RadarScan>(ns + "/ti_mmwave/radar_scan", 100);
+//   auto marker_pub =
+//       create_publisher<Marker>(ns + "/ti_mmwave/radar_scan_markers", 100);
 
   DataHandler = std::make_shared<DataUARTHandler>();
   DataHandler->setNamespace(ns);

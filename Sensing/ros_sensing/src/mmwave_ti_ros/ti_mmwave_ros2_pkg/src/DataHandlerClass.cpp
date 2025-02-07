@@ -892,6 +892,7 @@ void *DataUARTHandler::sortIncomingData(void) {
           //printParsedRadarPacket(radarPacket);
           // Save to log file
           saveDataToLog(serializedJSONString);
+          //printf("Timestamp: %f\n", mmwData.time);
           printf("Number of objects detected: %d\n", mmwData.numObjOut);
           // Send JSON over socket
           try {

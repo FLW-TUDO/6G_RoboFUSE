@@ -22,10 +22,10 @@ def generate_launch_description():
     server_port_arg = DeclareLaunchArgument('server_port', default_value='65432')
     
     
-    command_port_arg = DeclareLaunchArgument('command_port', default_value='/dev/ttyUSB1')
+    command_port_arg = DeclareLaunchArgument('command_port', default_value='/dev/ttyUSB0')
     baud_rate_arg = DeclareLaunchArgument('baud_rate', default_value='115200')
 
-    data_port_arg = DeclareLaunchArgument('data_port', default_value='/dev/ttyUSB2')
+    data_port_arg = DeclareLaunchArgument('data_port', default_value='/dev/ttyUSB1')
     data_rate_arg = DeclareLaunchArgument('data_rate', default_value='921600')
     
     # validate_ports(LaunchConfiguration('command_port'),LaunchConfiguration('data_port'))
@@ -42,7 +42,7 @@ def generate_launch_description():
     rosbag_file_path = os.path.join(rosbag_dir, f'rosbag_logs/recorded_data_{timestamp}')  # Full path for recorded data
 
     # Configuration file for mmWave sensor
-    cfg_file = "6843ISK_3d_0512.cfg"
+    cfg_file = "6843ISK_3d.cfg"
 
     # Path to configuration file
     pkg_dir_path = get_package_share_directory('ti_mmwave_ros2_pkg')
