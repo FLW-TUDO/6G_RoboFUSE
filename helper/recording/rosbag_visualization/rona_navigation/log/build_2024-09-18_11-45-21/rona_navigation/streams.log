@@ -1,0 +1,6 @@
+[0.028s] Invoking command in '/home/robot_3/MeNu/src/rona_navigation/build/rona_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot_3/MeNu/install/rona_mqtt:/opt/robomaster/ros2_ws/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --build /home/robot_3/MeNu/src/rona_navigation/build/rona_navigation -- -j8 -l8
+[0.088s] [0mCMake Error: The current CMakeCache.txt directory /home/robot_3/MeNu/src/rona_navigation/build/rona_navigation/CMakeCache.txt is different than the directory /home/emagon/rona/src/rona_navigation/build/rona_navigation where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
+[0.128s] [0mCMake Error: The source directory "/home/emagon/rona/src/rona_navigation" does not exist.
+[0.128s] Specify --help for usage, or press the help button on the CMake GUI.[0m
+[0.130s] gmake: *** [Makefile:254: cmake_check_build_system] Error 1
+[0.136s] Invoked command in '/home/robot_3/MeNu/src/rona_navigation/build/rona_navigation' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/robot_3/MeNu/install/rona_mqtt:/opt/robomaster/ros2_ws/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --build /home/robot_3/MeNu/src/rona_navigation/build/rona_navigation -- -j8 -l8

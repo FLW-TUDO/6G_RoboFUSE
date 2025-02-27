@@ -5,15 +5,16 @@ from rclpy.node import Node
 from sensor_msgs.msg import CompressedImage, CameraInfo
 from cv_bridge import CvBridge
 import cv2
-
+import socket
+## remember to add the camera_link frame to the urdf
 class WebcamPublisher(Node):
-    
-    def __init__(self, namespace=''):
-        super().__init__('webcam_publisher', namespace=namespace)
+    def __init__(self):
+        super().__init__('webcam_publisher')
         
         # Create publishers for compressed images and camera info
-        self.image_publisher = self.create_publisher(CompressedImage, f'{namespace}/ep03/image_raw/compressed', 10)
-        self.camera_info_publisher = self.create_publisher(CameraInfo, f'{namespace}/ep03/image_raw/camera_info', 10)
+        self.namespace = socket.gethostname()
+        self.image_publisher = self.create_publisher(CompressedImage, f'{self.namespace}/webcam/image_raw/compressed', 10)
+        self.camera_info_publisher = self.create_publisher(CameraInfo, f'{self.namespace}/webcam/image_raw/camera_info', 10)
         
         # Initialize the OpenCV bridge for ROS2 image conversion
         self.bridge = CvBridge()
@@ -59,7 +60,7 @@ class WebcamPublisher(Node):
         # Convert the OpenCV frame to a ROS2 CompressedImage message
         image_msg = CompressedImage()
         image_msg.header.stamp = self.get_clock().now().to_msg()
-        image_msg.header.frame_id = "ep03/wave_sensor_link"  # Attach the frame to 'camera_link'
+        image_msg.header.frame_id = f"{self.namespace}/wave_sensor_link"  # Attach the frame to 'camera_link'
         image_msg.format = "jpeg"
         image_msg.data = cv2.imencode('.jpg', frame)[1].tobytes()  # Encode image to JPEG format
         
@@ -80,13 +81,7 @@ class WebcamPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    
-    # Get the namespace from the command line arguments or use default
-    namespace = ''
-    if args and len(args) > 1:
-        namespace = args[1]
-    
-    node = WebcamPublisher(namespace=namespace)
+    node = WebcamPublisher()
     
     try:
         rclpy.spin(node)

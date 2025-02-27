@@ -83,12 +83,14 @@ void DataUARTHandler::onInit() {
 }
 
 void DataUARTHandler::setPublishers(
-    const rclcpp::Publisher<PointCloud2>::SharedPtr DataUARTHandler_pub_in,
-    const rclcpp::Publisher<RadarScan>::SharedPtr radar_scan_pub_in,
-    const rclcpp::Publisher<Marker>::SharedPtr marker_pub_in) {
+    const rclcpp::Publisher<PointCloud2>::SharedPtr DataUARTHandler_pub_in)
+    //const rclcpp::Publisher<RadarScan>::SharedPtr radar_scan_pub_in,
+    //const rclcpp::Publisher<Marker>::SharedPtr marker_pub_in) 
+    
+    {
   this->DataUARTHandler_pub = DataUARTHandler_pub_in;
-  this->radar_scan_pub = radar_scan_pub_in;
-  this->marker_pub = marker_pub_in;
+  //this->radar_scan_pub = radar_scan_pub_in;
+  ///this->marker_pub = marker_pub_in;
 }
 
 void DataUARTHandler::setNamespace(const std::string &ns) { this->ns = ns; }
@@ -671,7 +673,7 @@ void *DataUARTHandler::sortIncomingData(void) {
           // For SDK 3.x, intensity is replaced by snr in sideInfo and is parsed
           // in the READ_SIDE_INFO code
         }
-
+        /*
         if (((maxElevationAngleRatioSquared == -1) ||
              (((RScan->points[i].z * RScan->points[i].z) /
                (RScan->points[i].x * RScan->points[i].x +
@@ -682,7 +684,7 @@ void *DataUARTHandler::sortIncomingData(void) {
               maxAzimuthAngleRatio)) &&
             (RScan->points[i].x != 0)) {
           radar_scan_pub->publish(radarscan);
-        }
+        } */
         i++;
       }
 
@@ -895,12 +897,13 @@ void *DataUARTHandler::sortIncomingData(void) {
           //printf("Timestamp: %f\n", mmwData.time);
           printf("Number of objects detected: %d\n", mmwData.numObjOut);
           // Send JSON over socket
+          /*
           try {
               sendParsedDataOverSocket(serializedJSONString);
            
           } catch (const std::exception &e) {
               fprintf(stderr, "Error sending parsed radar data: %s\n", e.what());
-          } 
+          } */
           // std::vector<uint8_t> serializedBuffer = serializeMmwDataPacket_custom(mmwData);
           // sendRawDataOverSocket(serializedBuffer);
         }
@@ -1158,7 +1161,7 @@ void *DataUARTHandler::syncedBufferSwap_helper(void *context) {
 }
 
 void DataUARTHandler::visualize(
-    const ti_mmwave_ros2_interfaces::msg::RadarScan &msg) {
+  const ti_mmwave_ros2_interfaces::msg::RadarScan &msg) {
   // visualization_msgs::msg::Marker marker;
   auto marker = visualization_msgs::msg::Marker();
 
@@ -1187,7 +1190,7 @@ void DataUARTHandler::visualize(
   marker.color.g = (int)255 * msg.intensity;
   marker.color.b = 1;
 
-  marker_pub->publish(marker);
+  // marker_pub->publish(marker);
 }
 
 // Funtions to handle socket Data Transfers
@@ -1220,6 +1223,7 @@ void DataUARTHandler::setupSocket(const std::string &server_ip, int server_port)
     printf("Connected successfully to %s:%d\n", server_ip.c_str(), server_port);
     socket_connected = true;
 }
+
 
 void DataUARTHandler::sendRawDataOverSocket(const std::vector<uint8_t> &data) {
     if (!socket_connected || socket_fd < 0) {

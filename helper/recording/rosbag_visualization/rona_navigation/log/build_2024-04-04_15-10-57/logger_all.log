@@ -1,0 +1,105 @@
+[0.057s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.057s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x75edf2c31480>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x75edf2c30e80>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x75edf2c30e80>>)
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.140s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.140s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/emagon/rona/src/rona_navigation'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.140s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.147s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'rona_navigation'
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.167s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/emagon/Nav_WS/install
+[0.167s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 9 installed packages in /home/emagon/rona/install
+[0.168s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 385 installed packages in /opt/ros/humble
+[0.169s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_target' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_clean_first' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'cmake_force_configure' from command line to 'False'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'ament_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.194s] Level 5:colcon.colcon_core.verb:set package 'rona_navigation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.194s] DEBUG:colcon.colcon_core.verb:Building package 'rona_navigation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/emagon/rona/src/rona_navigation/build/rona_navigation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/emagon/rona/src/rona_navigation/install/rona_navigation', 'merge_install': False, 'path': '/home/emagon/rona/src/rona_navigation', 'symlink_install': False, 'test_result_base': None}
+[0.194s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.195s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.195s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/emagon/rona/src/rona_navigation' with build type 'ament_cmake'
+[0.195s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/emagon/rona/src/rona_navigation'
+[0.197s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.197s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.197s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.202s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake /home/emagon/rona/src/rona_navigation -DCMAKE_INSTALL_PREFIX=/home/emagon/rona/src/rona_navigation/install/rona_navigation
+[1.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake /home/emagon/rona/src/rona_navigation -DCMAKE_INSTALL_PREFIX=/home/emagon/rona/src/rona_navigation/install/rona_navigation
+[1.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --build /home/emagon/rona/src/rona_navigation/build/rona_navigation -- -j20 -l20
+[1.938s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --build /home/emagon/rona/src/rona_navigation/build/rona_navigation -- -j20 -l20
+[1.960s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --install /home/emagon/rona/src/rona_navigation/build/rona_navigation
+[2.000s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rona_navigation)
+[2.000s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/emagon/rona/src/rona_navigation/build/rona_navigation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/emagon/Nav_WS/install/ros_robomaster_description:/home/emagon/rona/install/ros_robomaster_description:/opt/ros/humble /usr/bin/cmake --install /home/emagon/rona/src/rona_navigation/build/rona_navigation
+[2.003s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation' for CMake module files
+[2.003s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation' for CMake config files
+[2.003s] Level 1:colcon.colcon_core.shell:create_environment_hook('rona_navigation', 'cmake_prefix_path')
+[2.003s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.ps1'
+[2.004s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.dsv'
+[2.004s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.sh'
+[2.004s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/bin'
+[2.004s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/lib/pkgconfig/rona_navigation.pc'
+[2.005s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/lib/python3.10/site-packages'
+[2.005s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/bin'
+[2.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.ps1'
+[2.005s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.dsv'
+[2.005s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.sh'
+[2.006s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.bash'
+[2.006s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.zsh'
+[2.007s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/colcon-core/packages/rona_navigation)
+[2.024s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rona_navigation)
+[2.024s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation' for CMake module files
+[2.025s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation' for CMake config files
+[2.025s] Level 1:colcon.colcon_core.shell:create_environment_hook('rona_navigation', 'cmake_prefix_path')
+[2.025s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.ps1'
+[2.026s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.dsv'
+[2.026s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/hook/cmake_prefix_path.sh'
+[2.026s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/bin'
+[2.027s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/lib/pkgconfig/rona_navigation.pc'
+[2.027s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/lib/python3.10/site-packages'
+[2.027s] Level 1:colcon.colcon_core.environment:checking '/home/emagon/rona/src/rona_navigation/install/rona_navigation/bin'
+[2.027s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.ps1'
+[2.028s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.dsv'
+[2.028s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.sh'
+[2.028s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.bash'
+[2.029s] INFO:colcon.colcon_core.shell:Creating package script '/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/rona_navigation/package.zsh'
+[2.029s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/emagon/rona/src/rona_navigation/install/rona_navigation/share/colcon-core/packages/rona_navigation)
+[2.029s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.029s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.029s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.029s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.034s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.035s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.035s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.053s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.054s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/emagon/rona/src/rona_navigation/install/local_setup.ps1'
+[2.055s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/emagon/rona/src/rona_navigation/install/_local_setup_util_ps1.py'
+[2.055s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/emagon/rona/src/rona_navigation/install/setup.ps1'
+[2.056s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/emagon/rona/src/rona_navigation/install/local_setup.sh'
+[2.057s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/emagon/rona/src/rona_navigation/install/_local_setup_util_sh.py'
+[2.057s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/emagon/rona/src/rona_navigation/install/setup.sh'
+[2.058s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/emagon/rona/src/rona_navigation/install/local_setup.bash'
+[2.058s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/emagon/rona/src/rona_navigation/install/setup.bash'
+[2.059s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/emagon/rona/src/rona_navigation/install/local_setup.zsh'
+[2.059s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/emagon/rona/src/rona_navigation/install/setup.zsh'

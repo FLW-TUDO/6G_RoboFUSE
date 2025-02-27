@@ -1,0 +1,42 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/emagon/rona/install/teb_local_planner/include/**",
+        "/home/emagon/rona/install/teb_msgs/include/**",
+        "/home/emagon/rona/install/costmap_converter/include/**",
+        "/home/emagon/rona/install/costmap_converter_msgs/include/**",
+        "/home/emagon/Nav_WS/install/odometry_flattener/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_rviz_plugin/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_ros/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_image_padding/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_ros_common/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_performance_measurement_msgs/include/**",
+        "/home/emagon/Nav_WS/install/nvblox_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/emagon/Nav_WS/src/rona_physical/include/**",
+        "/home/emagon/Nav_WS/src/cplus_mqtt/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox/nvblox/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_examples/nvblox_image_padding/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_examples/odometry_flattener/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_nav2/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_performance_measurement/nvblox_performance_measurement/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_ros/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_ros_common/include/**",
+        "/home/emagon/Nav_WS/src/isaac_ros_nvblox/nvblox_rviz_plugin/include/**",
+        "/home/emagon/Nav_WS/src/rona_gazebo/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

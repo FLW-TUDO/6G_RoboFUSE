@@ -1,0 +1,11 @@
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/uninstall.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/rona_navigation_uninstall.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/ament_cmake_python_copy_rona_navigation.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/ament_cmake_python_build_rona_navigation_egg.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/test.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/edit_cache.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/rebuild_cache.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/list_install_components.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/install.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/install/local.dir
+/home/emagon/rona/src/rona_navigation/build/CMakeFiles/install/strip.dir

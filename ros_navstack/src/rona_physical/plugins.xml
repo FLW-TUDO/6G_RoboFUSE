@@ -1,0 +1,33 @@
+<library path="vicon_obstacle_layer">
+    <class name="rona_physical/ViconObstacleLayer"
+           type="rona_physical::ViconObstacleLayer"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>
+
+<library path="vicon_obstacle_layerA">
+    <class name="rona_physical/ViconObstacleLayerA"
+           type="rona_physical::ViconObstacleLayerA"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>
+
+<library path="vicon_obstacle_layerAS4">
+    <class name="rona_physical/ViconObstacleLayerAS4"
+           type="rona_physical::ViconObstacleLayerAS4"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>
+
+<library path="vicon_obstacle_layerAS5">
+    <class name="rona_physical/ViconObstacleLayerAS5"
+           type="rona_physical::ViconObstacleLayerAS5"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>
+<library path="vicon_obstacle_layerAS6">
+    <class name="rona_physical/ViconObstacleLayerAS6"
+           type="rona_physical::ViconObstacleLayerAS6"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>
+<library path="vicon_obstacle_layerRM">
+    <class name="rona_physical/ViconObstacleLayerRM"
+           type="rona_physical::ViconObstacleLayerRM"
+           base_class_type="nav2_costmap_2d::Layer"/>
+</library>

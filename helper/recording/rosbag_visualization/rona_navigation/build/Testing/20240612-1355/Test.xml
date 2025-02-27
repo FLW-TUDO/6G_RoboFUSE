@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240612-1355-Experimental"
+	Name="Dellcita"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="Dellcita"
+	OSRelease="6.5.0-28-generic"
+	OSVersion="#29~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Apr  4 14:39:20 UTC 2"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="183"
+	ProcessorCacheSize="24576"
+	NumberOfLogicalCPU="20"
+	NumberOfPhysicalCPU="14"
+	TotalVirtualMemory="62499"
+	TotalPhysicalMemory="31771"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="4494.41"
+	>
+	<Testing>
+		<StartDateTime>Jun 12 15:55 CEST</StartDateTime>
+		<StartTestTime>1718200501</StartTestTime>
+		<TestList/>
+		<EndDateTime>Jun 12 15:55 CEST</EndDateTime>
+		<EndTestTime>1718200501</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

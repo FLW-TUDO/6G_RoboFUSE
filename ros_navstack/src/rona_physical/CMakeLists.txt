@@ -25,15 +25,26 @@ find_package(nav2_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_kdl REQUIRED)
 
+find_package(nav2_costmap_2d REQUIRED)
+find_package(pluginlib REQUIRED)
+
 # Include Cpp "include" directory
 include_directories(include)
 include_directories(/opt/ros/humble/include/tf2_geometry_msgs)
+include_directories(
+  include
+  ${nav2_costmap_2d_INCLUDE_DIRS}
+)
 # Add libraries
 add_library(cmd_vel_to_ackermann_node SHARED src/cmd_vel_to_ackermann/cmd_vel_to_ackermann.cpp)
 add_library(vicon_tf_converter_node SHARED src/vicon/vicon_tf_converter.cpp)
 add_library(waypoint_publisher_node SHARED src/waypoint_publisher/waypoint_publisher.cpp)
-
-
+add_library(vicon_obstacle_layer SHARED src/vicon/vicon_obstacle_layer.cpp)
+add_library(vicon_obstacle_layerA SHARED src/vicon/vicon_obstacle_layerA.cpp)
+add_library(vicon_obstacle_layerAS4 SHARED src/vicon/vicon_obstacle_layerAS4.cpp)
+add_library(vicon_obstacle_layerAS5 SHARED src/vicon/vicon_obstacle_layerAS5.cpp)
+add_library(vicon_obstacle_layerAS6 SHARED src/vicon/vicon_obstacle_layerAS6.cpp)
+add_library(vicon_obstacle_layerRM SHARED src/vicon/vicon_obstacle_layerRM.cpp)
 # Create Cpp executable
 add_executable(cmd_vel_to_ackermann src/cmd_vel_to_ackermann/cmd_vel_to_ackermann_main.cpp)
 add_executable(vicon_tf_converter src/vicon/vicon_tf_converter_main.cpp)
@@ -51,6 +62,13 @@ set(waypoint_publisher_dependencies rclcpp geometry_msgs nav2_msgs rclcpp_action
 ament_target_dependencies(waypoint_publisher_node ${waypoint_publisher_dependencies})
 ament_target_dependencies(waypoint_publisher ${waypoint_publisher_dependencies})
 
+ament_target_dependencies(vicon_obstacle_layer rclcpp nav2_costmap_2d pluginlib)
+ament_target_dependencies(vicon_obstacle_layerA rclcpp nav2_costmap_2d pluginlib)
+ament_target_dependencies(vicon_obstacle_layerAS4 rclcpp nav2_costmap_2d pluginlib)
+ament_target_dependencies(vicon_obstacle_layerAS5 rclcpp nav2_costmap_2d pluginlib)
+ament_target_dependencies(vicon_obstacle_layerAS6 rclcpp nav2_costmap_2d pluginlib)
+ament_target_dependencies(vicon_obstacle_layerRM rclcpp nav2_costmap_2d pluginlib)
+pluginlib_export_plugin_description_file(nav2_costmap_2d plugins.xml)
 # Link libraries
 target_link_libraries(cmd_vel_to_ackermann cmd_vel_to_ackermann_node)
 target_link_libraries(vicon_tf_converter vicon_tf_converter_node)
@@ -63,6 +81,47 @@ install(TARGETS
   vicon_tf_converter
   waypoint_publisher
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS 
+  vicon_obstacle_layer
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+install(TARGETS 
+  vicon_obstacle_layerA
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+
+install(TARGETS 
+  vicon_obstacle_layerAS4
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+install(TARGETS 
+  vicon_obstacle_layerAS5
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+install(TARGETS 
+  vicon_obstacle_layerAS6
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+install(TARGETS 
+  vicon_obstacle_layerRM
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
 )
 
 install(TARGETS 
@@ -79,7 +138,9 @@ install(DIRECTORY
   config
   DESTINATION share/${PROJECT_NAME}
 )
-
+install(FILES plugins.xml
+  DESTINATION share/${PROJECT_NAME}
+)
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
 
@@ -87,7 +148,8 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
   scripts/curve_fitting.py
   scripts/camera_pub.py
-  # scripts/overlay_pcl.py
+  scripts/costmap_generator.py
+  scripts/clear_costmap_on_goal.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -1,0 +1,20 @@
+Run RVIZ ROSBAG with robot moves (Galactic Version):
+
+Installation:
+- Install rona_physical, rona_navigation, and ros_robomaster_description
+- Make sure the main scripts to be set in the correct ROS DISTRO:
+* MeNu/src/rona_navigation/launch/rviz/robomaster_nav_launch.py
+Here, the original code is in line 96 where robocore_cmd is commented. Instead, we run the vicon_cmd to execute ros2 launch rona_physical vicon_tf_converter.launch.py namespace:=ep03
+* MeNu/src/rona_navigation/launch/rviz/navigation_launch.py
+Original code in lifecycle_nodes is the behavior_server for Humble, but I use recoveries_server for Galactic
+
+
+How to launch RVIZ:
+- ros2 bag play -l of certain scenario
+- open the rviz2 from terminal and import config rosbag_play.rviz
+- execute ros2 launch rona_navigation robomaster_nav_launch.py --> MeNu/src/rona_navigation/launch/rviz/robomaster_nav_launch.py (change robot name in line 126)
+
+
+
+ros2 launch rona_physical vicon_tf_converter.launch.py namespace:=ep03 --> MeNu/src/rona_navigation/launch/rviz/navigation_launch.py
+

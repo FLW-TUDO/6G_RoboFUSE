@@ -13,6 +13,7 @@ from nav2_common.launch import ReplaceString
 
 def generate_launch_description():
     bringup_share = get_package_share_directory('rona_navigation')
+    rs_camera_pkg_share = get_package_share_directory('rs_camera_pkg')
     # nav2_launch_file_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
 
     # Get the default hostname of the computer
@@ -47,7 +48,7 @@ def generate_launch_description():
 
     declare_params_file_cmd = DeclareLaunchArgument(
         'params_file',
-        default_value=os.path.join(bringup_share, 'config', 'robomaster_nav2_normal.yaml'),# write down nav2_params for a slow velocity 
+        default_value=os.path.join(bringup_share, 'config', 'robomaster_nav2_obstacle.yaml'),# write down nav2_params for a slow velocity 
         description='Full path to the ROS2 parameters file to use for all launched nodes')
 
     declare_bt_xml_cmd = DeclareLaunchArgument(
@@ -126,6 +127,21 @@ def generate_launch_description():
             output='screen',
             # remappings= tf_remapping
             ),
+        #Node(
+        #    package='rs_camera_pkg',
+        #    executable='rs_pointcloud',
+        #    name='rs_camera',
+        #    # namespace='ep03',
+        #    output='screen'
+        #),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(rs_camera_pkg_share, 'launch', 'rs_camera.launch.py')),
+                launch_arguments={
+                    'enable_pointcloud': 'false',
+                    'enable_rgb': 'true',
+                    'enable_depth': 'false'
+                }.items()
+            ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(bringup_share, 'launch', 'rviz','navigation_launch.py')),
             launch_arguments={
@@ -135,7 +151,10 @@ def generate_launch_description():
                 'params_file': namespaced_params_file,
                 'default_bt_xml_filename': default_bt_xml_filename,
                 'use_lifecycle_mgr': 'false',
-                'map_subscribe_transient_local': 'true'}.items())
+                'map_subscribe_transient_local': 'true'}.items()),
+
+        # IncludeLaunchDescription(
+        #     PythonLaunchDescriptionSource(os.path.join(bringup_share, 'launch', 'rviz', 'pointcloud_to_scan.launch.py')))
      ])
 
     ld = LaunchDescription()

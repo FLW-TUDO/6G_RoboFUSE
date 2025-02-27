@@ -1,0 +1,16 @@
+**How to use** 
+1. Lauch the vicon bridge in the nuc computer and the relative distance API
+
+2. launch the navigation stack with the desired velocity using this command:
+ros2 launch rona_navigation test_bringup_launch.py speed:=1
+for the speed you can choose using 1 = fast 2 = normal 3 = slow
+
+3. Go to the folder rona_navigation/scripts there you can find all the scenarios to run them use python3
+the velocity of the circular trajectories is independent from the params file 
+-Circular_one.py  0.8 (you can choose any velocity, it run the circle for only one robot)
+-circular_two_robots 1.0 (run the scenario for two robots, as well we need to add the value of the linear velocity)
+-grid_action_navigator  (run the grid all around the arena, it is posible to change the start and end position to increase or decrease the grid)
+-waypont_navigator (run the waypoint follower using the points storaged into the waypoint.yaml)
+-distance_tracker (to run this one you need to use first the Circle_one.py in the other robot a suggest velocity is 0.8 for the circular and 1.0 
+                    for the other robot)
+

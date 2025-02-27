@@ -1,4 +1,16 @@
-# Ignore build, install, and log folders
-build/
-install/
-log/
+# Ignore build directories
+/build/
+/install/
+/log/
+/radar_logs/
+/rosbag_logs/
+ 
+ 
+# Ignore temporary files
+*.o
+*.log
+*.tmp
+ 
+# Ignore IDE-specific files
+.idea/
+*.swp

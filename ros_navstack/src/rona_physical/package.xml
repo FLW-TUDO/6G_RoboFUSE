@@ -25,6 +25,7 @@
   
   <export>
     <build_type>ament_cmake</build_type>
+    <costmap_2d plugin="${prefix}/plugins.xml" />
     <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>

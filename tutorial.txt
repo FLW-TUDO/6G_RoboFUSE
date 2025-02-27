@@ -1,11 +1,98 @@
 6G_RoboFUSE run
 
+ssh robot_5@192.168.2.161
+ssh robot_3@192.168.2.80
+
+----- Old -------------------------------------------------------------------
 1. cd 6G_RoboFUSE open 3 different terminal tabs
 2. Set first tab and open Sensing and run source /home/robot_3/ti/dev/python_tool/Python_venv/mmwave_plot/myenv/bin/activate
 3. Set second tab and open ESP32
 4. Set third tab to run the main ISMAC program
 
-RUN Step by Step in following:
-1. Run the python3 serial_data_ismac.py on second tab
+old
 2. Run ISMAC main program python3 time_division_main_controller.py on third tab
 3. Press reset on radar sensor and run python py_mmw_main_robomaster.py on first tab
+------------------------------------------------------------------------------
+
+------------ Setting up camera and TI mmWave Sensor ------------------------------------------------
+RUN realsense camera:
+ros2 launch realsense2_camera rs_launch.py
+
+RUN mmWave ROS sensor:
+cd /home/robot_3/6G_RoboFUSE_Dev/Sensing/ros_sensing
+ros2 launch ti_mmwave_ros2_pkg mmwave_datahdl_socket_launch_rosbag.py
+update: 
+ros2 launch ti_mmwave_ros2_pkg mmwave_datahdl_socket_launch_rosbag_ep03.py command_port:=/dev/ttyUSB1 data_port:=/dev/ttyUSB2 scenario:=testing
+ros2 launch ti_mmwave_ros2_pkg mmwave_datahdl_socket_launch_rosbag.py command_port:=/dev/ttyUSB1 data_port:=/dev/ttyUSB2 scenario:=testing
+
+location rosbag for ep03:
+/media/robot_3/robot_3_ext/rosbag_measurements/rosbag_logs/
+
+setup the ssd to mount automatically in ep03
+
+Build mmWave after changes:
+colcon build --symlink-install --packages-select ti_mmwave_ros2_interfaces source install/local_setup.bash
+colcon build --symlink-install --packages-select ti_mmwave_ros2_pkg source install/local_setup.bash
+
+setup mmWave environment source in nano .bashrc
+source /home/robot_3/6G_RoboFUSE_Dev/Sensing/ros_sensing/install/local_setup.bash
+
+-------------------------------------------------------------------------------------------------------------------------
+------------------------New Version---------------------------------------------------------------------
+RUN Step by Step in following:
+ssh robot_5@192.168.2.161
+ssh robot_3@192.168.2.80
+working ssh in bash:
+sshpass -p 'robomaster' ssh -t robot_3@192.168.2.80 "source /opt/ros/humble/setup.bash; source /home/robot_3/MeNu/install/setup.bash; ros2 launch rona_navigation waypoint_bringup_launch.py; exit"
+
+
+1. Run ros2 launch rona_navigation waypoint_bringup_launch.py on first tab
+2. cd /home/robot_3/6G_RoboFUSE_Dev/Sensing/ros_sensing
+3. FOr running 6G emulation: Run the python3 serial_data_ismac.py on second tab
+4. ros2 launch ti_mmwave_ros2_pkg mmwave_datahdl_socket_launch_rosbag.py command_port:=/dev/ttyUSB1 data_port:=/dev/ttyUSB2 scenario:=testing on third tab
+5. running robot open cd /MeNu/src/rona_navigation/scripts
+6. python3 waypoint_navigator.py waypoints.yaml
+7. open new tab to cd dev/vicon_bridge/vicon-mqtt-subscriber-py$ and run python3 vicon_mqtt_subscriber.py 
+8. open new tab run ros2 launch robomaster_nav2_bringup rviz_launch.py namespace:=ep02 use_namespace:=true rviz_config:="/home/irfanflw/ros2_ws_galactic/src/robomaster_nav2_bringup/config/rviz/nav2_namespaced_view.rviz"
+
+
+RUN Vicon Bridge
+export ROS_DOMAIN_ID=3 --ep03
+export ROS_DOMAIN_ID=5 --ep05
+ros2 launch vicon_bridge_ros2 vicon_bridge.launch.py
+
+RUN VICON:
+cd dev/vicon_bridge/vicon-mqtt-subscriber-py/
+
+RUN COSTMAP:
+run in laptop
+cd MeNu
+source install/local_setup.bash
+ros2 launch rona_physical vicon_tf_converter.launch.py namespace:=AS_1_neu
+AS_3_neu
+AS_4_neu
+AS_5_neu
+AS_6_neu
+ep03/05
+ 
+
+
+RUN Raspi Cable Robot:
+ssh into pi 
+ssh pi@192.168.2.84
+raspi
+run docker
+ sudo docker run -it --rm --network host  -v /home/pi/ros2_mmwave:/ros2_mmwave --device=/dev/ttyACM0 --device=/dev/ttyACM1 -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e ROS_DOMAIN_ID=20 docker-ros-ti
+cd ros2_mmwave
+new with time synchronization: 
+sudo docker run -it --rm --network host -v /home/pi/ros2_mmwave:/ros2_mmwave -v /etc/localtime:/etc/localtime:ro --device=/dev/ttyACM0 --device=/dev/ttyACM1 -e RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -e ROS_DOMAIN_ID=20 docker-ros-ti
+
+source install/local_setup.bash
+ros2 launch ti_mmwave_ros2_pkg mmwave_datahdl_socket_launch_rosbag.py scenario:=SCENARIO
+
+Run RVIZ ROSBAG:
+ros2 launch rona_navigation robomaster_nav_launch.py --> MeNu/src/rona_navigation/launch/rviz/robomaster_nav_launch.py (change robot name in line 126)
+ros2 launch rona_physical vicon_tf_converter.launch.py namespace:=ep03 --> MeNu/src/rona_navigation/launch/rviz/navigation_launch.py
+install ros_robomaster_description
+Ros Frame check
+ros2 run tf2_tools view_frames --> to see the transformation tree matrix
