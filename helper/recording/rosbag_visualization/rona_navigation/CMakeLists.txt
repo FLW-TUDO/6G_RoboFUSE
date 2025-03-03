@@ -38,6 +38,8 @@ ament_python_install_package(${PROJECT_NAME})
 # Install Python executable scripts
 install(PROGRAMS
   src/follower_node.py  # Path to your Python node script
+  scripts/timestamp_publisher.py #Path to timestamp publisher
+  launch/rviz/rosbag_rviz_launch.py
   DESTINATION lib/${PROJECT_NAME}  # Install into the package lib folder
 )
 
